@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+    <title>Pokes</title>
+  </head>
+  <body>
+    <section class="registration">
+    	<h1>Registration</h1>
+    	{% with messages = get_flashed_messages(category_filter=['validation']) %}
+    		{% if messages %}
+    			<ul class="flashes">
+      				{% for message in messages %}
+        				<li>{{message}}</li>
+      				{% endfor %}
+      			</ul>
+    		{% endif %}
+    	{% endwith %}
+    	<form class="form" action="/registration" method="post">
+    		<label>
+    			Name:<br>
+    			<input type="text" name="name"></input>
+    		</label>
+    		<label>
+    			Alias:<br>
+    			<input type="text" name="alias"></input>
+    		</label>
+    		<label>
+    			E-mail:<br>
+    			<input type="text" name="email"></input>
+    		</label>
+    		<label>
+    			Password:<br>
+    			<input type="password" name="password"></input>
+    		</label>
+    		<label>
+    			Confirm Password:<br>
+    			<input type="password" name="pwd_conf"></input>
+    		</label>
+            <label>
+            D.O.B.(year/month/day):<br>
+                <select name="year">
+                    <option value="2011">2016</option>
+                    <option value="2010">2015</option>
+                    <option value="2011">2014</option>
+                    <option value="2010">2013</option>
+                    <option value="2011">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2009</option>
+                    <option value="2010">2008</option>
+                    <option value="2011">2007</option>
+                    <option value="2010">2006</option>
+                    <option value="2011">2005</option>
+                    <option value="2010">2004</option>
+                </select>
+                <select name="month">
+                    <option value="1">Jan</option>
+                    <option value="2">Feb</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Apr</option>
+                    <option value="5">May</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Jul</option>
+                    <option value="8">Ago</option>
+                    <option value="9">Sep</option>
+                    <option value="10">Oct</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Dec</option>
+                </select>
+                <select name="day">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+            </label>
+            <button type="submit" name="add">Submit</button>
+        </form>
+    </section>
+
+    <section class="login">
+    	<h1>Login</h1>
+    	{% with messages = get_flashed_messages(category_filter=['login']) %}
+    		{% if messages %}
+    			<ul class="flashes">
+      				{% for message in messages %}
+        				<li>{{message}}</li>
+      				{% endfor %}
+      			</ul>
+    		{% endif %}
+    	{% endwith %}
+    	<form class="form" action="/login_process" method="post">
+    		<label>
+    			E-mail:<br>
+    			<input type="text" name="email"></input>
+    		</label>
+    		<label>
+    			Password:<br>
+    			<input type="password" name="password"></input>
+    		</label>
+    		<button type="submit" name="login">Login</button>
+    	</form>
+    </section>
+
+
+  </body>
+</html>

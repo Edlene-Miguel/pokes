@@ -1,0 +1,66 @@
+* {
+  font-family: monaco;
+}
+
+label{
+	display: block;
+	margin-bottom: 5px;
+}
+
+input{
+	width: 70%;
+}
+
+button{
+	font-size: 14px;
+	padding: 5px;
+	margin: 5px 0px 5px 0px;
+	border-radius: 5px;
+}
+
+table, th, td{
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+
+table{
+	margin-bottom: 10px;
+}
+
+thead{
+	background-color:#f2f2f2;
+}
+
+td{
+	padding: 5px 5px 5px 10px;
+	text-align: center;
+}
+
+.pokes{
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 30px 0px 50px 0px;
+    width: 30%;
+}
+
+.registration, .login{
+	display: inline-block;
+    width: 47%;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+.form{
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	
+}
+
+.flashes{
+	list-style: none;
+	color: red;
+	font-size: 14px;
+	padding-left: 0px;
+}

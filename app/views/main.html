@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+    <title>Pokes</title>
+  </head>
+  <body>
+    <a href="/logout">Logout</a>
+    <h2>Hello {{ user['alias'] }}!</h2>
+    <h4>{{ total_pokes[0] }} people poked you!</h4>
+    <section class="pokes">
+        {% for poke in pokes %}
+            {% if poke %}
+                <h3>{{ poke['alias'] }} poked you {{ poke['total_pokes'] }} time(s).</h3> 
+            {% endif %}
+            {% else %}
+                <h3>No recent pokes!</h3>
+        {% endfor %}
+    </section>
+
+    <section class="friends">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Alias</th>
+                    <th>Email Address</th>
+                    <th>Poke History</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for friend in friends %}
+                    <tr>
+                        <td id="name">{{ friend['name'] }}</td>
+                        <td id="alias">{{ friend['alias'] }}</td>
+                        <td id="email">{{ friend['email'] }}</td> 
+                        <td id="poke_history">{{ friend['poke'][0] }}</td>
+                        <td id="action">
+                            <form action="/pokes/log" method="post">
+                                    <input type="hidden" name="friend_id" value="{{ friend['friend_id'] }}"></input>
+                                <button type="submit" name="poke">Poke!</button>
+                            </form>
+                        </td>   
+                    </tr>
+                {% endfor %}           
+            </tbody>
+         </table>
+        
+    </section>
+  </body>
+</html>
